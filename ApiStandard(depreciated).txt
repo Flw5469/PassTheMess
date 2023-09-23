@@ -1,0 +1,26 @@
+/requestCanva
+{
+	userId:string,
+}
+
+/responseCanva
+{
+	width:number,
+	height:number,
+	canva:string[][],
+}
+/sharePaint
+{
+	userId:string,
+	X:number,
+	Y:number,
+	oldX:number,
+	oldY:number,
+}
+/broadcastPaint
+{
+	X:number,
+	Y:number,
+	oldX:number,
+	oldY:number,
+}

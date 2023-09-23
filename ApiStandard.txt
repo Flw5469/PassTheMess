@@ -1,0 +1,15 @@
+Client to server:
+initalize <canvas><>
+
+set <canvas><>
+
+get (when initalize and occasionally)
+
+paint {}
+Server to client:
+
+set <canvas><>
+
+paint{}
+
+get (send to host when receive get, after receive set, send set to the original sender)

@@ -1,0 +1,11 @@
+-modularize frontend
+-install socketio to java+js
+-inplement connection
+
+-implement receive->write operation in backend
+-implement update->broadcast operation in backend
+
+22/9
+Setup connection
+todo: handle connection
+think how to handle referenec to canva since it is changed

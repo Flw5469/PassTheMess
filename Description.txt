@@ -1,0 +1,14 @@
+A fun multiplayer painter created with javascript+java
+Frontend:
+simple login function
+fetch painter image (from server)
+pass operation
+fetch leaderboard+max server time
+Leaderboard page
+
+
+Backend:
+Leaderboard, server time
+Handle operations
+Pass painter
+User name+pw+login status

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.9.4
+Built-By: tonyf
+Build-Jdk: 18.0.2.1
+Class-Path: lib/Java-WebSocket-1.5.4.jar lib/slf4j-api-2.0.6.jar
+Main-Class: com.passthemessserver.app.App
+
