@@ -1,0 +1,1 @@
+java -cp PassTheMessServer-1.0-SNAPSHOT.jar com.passthemessserver.app.App
