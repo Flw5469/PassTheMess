@@ -28,7 +28,7 @@ function initalizeServerCanva(websocket:WebSocket,renderer:HTMLCanvasElement){
 
 //write to server canvas, not initalize
 function setCanva(websocket:WebSocket,renderer:HTMLCanvasElement){
-    const message=renderer.toDataURL;
+    const message=renderer.toDataURL();
     console.log("sending "+message);
     websocket.send("set "+message);
 }
@@ -49,6 +49,7 @@ function generateCanva(canvaText:string){
     canva.height = image.height;
     canva.getContext("2d").drawImage(image, 0, 0);
     };
+    canva.classList.add("render");
     return canva;
 }
 

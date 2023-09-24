@@ -20,7 +20,7 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.initalizeServerCanva = initalizeServerCanva;
     function setCanva(websocket, renderer) {
-        var message = renderer.toDataURL;
+        var message = renderer.toDataURL();
         console.log("sending " + message);
         websocket.send("set " + message);
     }
@@ -40,6 +40,7 @@ define(["require", "exports"], function (require, exports) {
             canva.height = image.height;
             canva.getContext("2d").drawImage(image, 0, 0);
         };
+        canva.classList.add("render");
         return canva;
     }
     exports.generateCanva = generateCanva;

@@ -59,29 +59,33 @@ define(["require", "exports", "./canva", "./websocket"], function (require, expo
             entered = 1;
         });
     }
-    function updateRenderer() {
-        console.log("renderer is: " + renderer.innerHTML);
-        placeholder.replaceWith(renderer);
+    function updateRenderer(temp_renderer) {
+        console.log("updateRenderer");
+        renderer.replaceWith(temp_renderer);
+        renderer = temp_renderer;
         bindEvent();
     }
     webSocketInstance.onopen = function () {
-        console.log("updateRenderer");
-        renderer = canva.generateNewCanva(canvaWidth, canvaHeight);
-        canva.initalizeServerCanva(webSocketInstance, renderer);
+        var temp_renderer = canva.generateNewCanva(canvaWidth, canvaHeight);
         canva.getCanva(webSocketInstance);
-        updateRenderer();
+        placeholder.replaceWith(renderer);
+        updateRenderer(temp_renderer);
     };
     webSocketInstance.onmessage = function (event) {
         var message = event.data;
         console.log("received message: " + message);
         if (message != "") {
             if (message.slice(0, 3) == "set") {
-                console.log("set received!");
-                updateRenderer();
+                console.log("set received!" + message);
+                var temp_renderer = canva.generateCanva(message);
+                updateRenderer(temp_renderer);
             }
             if (message.slice(0, 5) == "paint") {
                 console.log("paint received!" + message.substring(6));
                 canva.remotePaintCanva(message.substring(6), renderer);
+            }
+            if (message.slice(0, 3) == "get") {
+                canva.setCanva(webSocketInstance, renderer);
             }
         }
     };

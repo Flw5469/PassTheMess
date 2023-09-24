@@ -14,4 +14,7 @@ public class Canva {
     public void setCanva(String canvaText){
       this.canvaText=canvaText;
     }
+    public void clearCanva(){
+      this.canvaText="";
+    }
 }
